@@ -2,26 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer utilities {
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  /* Styles from styles/theme.css */
+  .background-light850_dark100 {
+    @apply bg-light-850 dark:bg-dark-100;
+  }
+
+  .background-light900_dark200 {
+    @apply bg-light-900 dark:bg-dark-200;
+  }
+
+  .background-light900_dark300 {
+    @apply bg-light-900 dark:bg-dark-300;
+  }
+
+  .background-light800_darkgradient {
+    @apply bg-light-800 dark:dark-gradient;
+  }
+
+  .background-light800_dark400 {
+    @apply bg-light-800 dark:bg-dark-400 !important;
+  }
+
+  .background-light700_dark400 {
+    @apply bg-light-700 dark:bg-dark-400;
+  }
+
+  .background-light700_dark300 {
+    @apply bg-light-700 dark:bg-dark-300;
+  }
+
+  .background-light800_dark400 {
+    @apply bg-light-800 dark:bg-dark-400;
+  }
+
+  .background-light800_dark300 {
+    @apply bg-light-800 dark:bg-dark-300 !important;
+  }
+
+  .text-dark100_light900 {
+    @apply text-dark-100 dark:text-light-900 !important;
+  }
+
+  /* ... (other styles) ... */
+  .placeholder {
+    @apply placeholder:text-light-400 dark:placeholder:text-dark-400;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Inter", sans-serif;
+}
+
+@layer utilities {
+
+  /* Styles from app/globals.css */
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .flex-start {
+    @apply flex justify-start items-center;
+  }
+
+  .card-wrapper {
+    @apply bg-light-900 dark:dark-gradient shadow-light-100 dar;
+  }
+
+  .btn {
+    @apply bg-light-800 dark:bg-dark-300 !important;
+  }
+
+  .btn-secondary {
+    @apply bg-light-800 dark:bg-dark-400 !important;
+  }
+
+  /* ... (other styles) ... */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
