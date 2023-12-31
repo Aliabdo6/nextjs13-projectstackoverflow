@@ -29,6 +29,7 @@ const spacegrotesk = Space_Grotesk({
 });
 
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/context/ThemeProvider";
 export const metadata: Metadata = {
   title: "Dev Stack OverFlow",
   description:
@@ -45,23 +46,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider
-      appearance={{
-        elements: {
-          formButtonPrimary:
-            "bg-blue-500 hover:bg-blue-600",
-          footerActionLink:
-            "text-blue-500 hover:text-blue-600",
-        },
-      }}
-    >
-      <html lang="en">
-        <body
-          className={` ${inter.variable} ${spacegrotesk.variable} `}
+    <html lang="en">
+      <body
+        className={` ${inter.variable} ${spacegrotesk.variable} `}
+      >
+        <ClerkProvider
+          appearance={{
+            elements: {
+              formButtonPrimary:
+                "bg-blue-500 hover:bg-blue-600",
+              footerActionLink:
+                "text-blue-500 hover:text-blue-600",
+            },
+          }}
         >
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
