@@ -24,23 +24,41 @@ export function ThemeProvider({
 }) {
   const [mode, setMode] = useState("");
 
+  // const handleThemeChange = () => {
+  //   if (mode === "dark") {
+  //     setMode("light");
+  //     document.documentElement.classList.add(
+  //       "light"
+  //     );
+  //   } else {
+  //     setMode("dark");
+  //     document.documentElement.classList.add(
+  //       "dark"
+  //     );
+  //   }
+  // };
+
   const handleThemeChange = () => {
+    const htmlElement = document.documentElement;
     if (mode === "dark") {
       setMode("light");
-      document.documentElement.classList.add(
-        "light"
-      );
+      htmlElement.classList.remove("dark");
+      htmlElement.classList.add("light");
     } else {
       setMode("dark");
-      document.documentElement.classList.add(
-        "dark"
-      );
+      htmlElement.classList.remove("light");
+      htmlElement.classList.add("dark");
     }
   };
 
+  // useEffect(() => {
+  //   "use client";
+  //   handleThemeChange();
+  // }, [mode]);
   useEffect(() => {
-    "use client";
-    handleThemeChange();
+    if (mode !== "") {
+      handleThemeChange();
+    }
   }, [mode]);
 
   return (
@@ -52,6 +70,7 @@ export function ThemeProvider({
   );
 }
 
+// opthion 1
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (context === undefined) {
@@ -61,6 +80,15 @@ export function useTheme() {
   }
   return context;
 }
+
+// // option 2
+// const contextValue = useMemo(() => ({ mode, setMode }), [mode, setMode]);
+
+// return (
+//   <ThemeContext.Provider value={contextValue}>
+//     {children}
+//   </ThemeContext.Provider>
+// );
 
 // " use client ";
 // import exp from "constants";
