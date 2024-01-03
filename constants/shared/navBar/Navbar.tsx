@@ -28,7 +28,7 @@ const Navbar = () => {
          text-dark-100 dark:text-light-900 max-sm:hidden "
         >
           Dev
-          <span className=" text-primary-500 ">
+          <span className=" text-sky-300 ">
             OverFlow
           </span>
         </p>
