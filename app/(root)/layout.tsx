@@ -1,3 +1,4 @@
+import RightSidebar from "@/components/shared/RightSidebar";
 import Navbar from "@/components/shared/navbar/Navbar";
 import LeftSidebar from "@/components/shared/search/LeftSidebar";
 import React from "react";
@@ -17,7 +18,7 @@ const Layout = ({
             {children}
           </div>
         </section>
-        Right Sidebar
+        <RightSidebar />
       </div>
       Toster component
     </main>

@@ -44,7 +44,7 @@ const LeftSidebar = () => {
                 className={`${isActive ? "" : "invert-colors"}`}
               />
               <p
-                className={`${isActive ? "base-bold" : "base-medium"}`}
+                className={`${isActive ? "base-bold" : "base-medium"} max-lg:hidden `}
               >
                 {link.label}
               </p>
@@ -58,7 +58,14 @@ const LeftSidebar = () => {
           {/* <SheetClose asChild> */}
           <Link href="/sign-in">
             <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
-              <span className="primary-text-gradient ">
+              <Image
+                alt="login"
+                width={20}
+                height={20}
+                className="invert-colors lg:hidden"
+                src="/assets/icons/account.svg"
+              />
+              <span className="primary-text-gradient max-lg:hidden ">
                 Log In
               </span>
             </Button>
@@ -67,7 +74,16 @@ const LeftSidebar = () => {
           {/* <SheetClose asChild> */}
           <Link href="/sign-up">
             <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
-              Sign Up
+              <Image
+                alt="sign up"
+                width={20}
+                height={20}
+                className="invert-colors lg:hidden"
+                src="/assets/icons/sign-up.svg"
+              />
+              <span className=" max-lg:hidden ">
+                Sign up
+              </span>
             </Button>
           </Link>
           {/* </SheetClose> */}
