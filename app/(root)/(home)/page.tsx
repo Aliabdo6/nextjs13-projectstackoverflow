@@ -1,78 +1,113 @@
+import QuestionCard from "@/components/Cards/QuestionCard";
 import HomeFilters from "@/components/home/HomeFilters";
 import Filter from "@/components/shared/Filter";
 import NoResult from "@/components/shared/NoResult";
 import LocalSearchBar from "@/components/shared/search/LocalSearchBar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
+// import { Item } from "@radix-ui/react-menubar";
 import Link from "next/link";
 
 const questions = [
   {
-    _id: 1,
+    _id: "1",
     title: "Introduction to Machine Learning",
     tags: [
-      { _id: 1, name: "machine learning" },
-      { _id: 2, name: "artificial intelligence" },
+      { _id: "1", name: "machine learning" },
+      {
+        _id: "2",
+        name: "artificial intelligence",
+      },
     ],
-    author: "John Doe",
-    upvotes: 25,
+    author: {
+      _id: "1",
+      name: "John Doe",
+      picture: "john-doe.jpg",
+    },
+    upvotes: "25",
     views: 500,
-    answers: 5,
-    createdAt: "2024-02-18T08:30:00.000Z",
+    answers: [],
+    createdAt: new Date(
+      "2024-02-18T08:30:00.000Z"
+    ),
   },
   {
-    _id: 2,
+    _id: "2",
     title: "React vs Vue: Which One to Choose?",
     tags: [
-      { _id: 3, name: "javascript" },
-      { _id: 4, name: "react" },
-      { _id: 5, name: "vue" },
+      { _id: "3", name: "javascript" },
+      { _id: "4", name: "react" },
+      { _id: "5", name: "vue" },
     ],
-    author: "Jane Smith",
-    upvotes: 40,
+    author: {
+      _id: "2",
+      name: "Jane Smith",
+      picture: "jane-smith.jpg",
+    },
+    upvotes: "40",
     views: 800,
-    answers: 8,
-    createdAt: "2024-01-15T15:45:00.000Z",
+    answers: [],
+    createdAt: new Date(
+      "2024-01-15T15:45:00.000Z"
+    ),
   },
   {
-    _id: 3,
+    _id: "3",
     title:
       "Data Structures and Algorithms Basics",
     tags: [
-      { _id: 6, name: "data structures" },
-      { _id: 7, name: "algorithms" },
+      { _id: "6", name: "data structures" },
+      { _id: "7", name: "algorithms" },
     ],
-    author: "Alex Johnson",
-    upvotes: 15,
+    author: {
+      _id: "3",
+      name: "Alex Johnson",
+      picture: "alex-johnson.jpg",
+    },
+    upvotes: "15",
     views: 300,
-    answers: 3,
-    createdAt: "2024-03-05T10:20:00.000Z",
+    answers: [],
+    createdAt: new Date(
+      "2024-03-05T10:20:00.000Z"
+    ),
   },
   {
-    _id: 4,
+    _id: "4",
     title: "Getting Started with Python",
     tags: [
-      { _id: 8, name: "python" },
-      { _id: 9, name: "programming" },
+      { _id: "8", name: "python" },
+      { _id: "9", name: "programming" },
     ],
-    author: "Sarah Brown",
-    upvotes: 30,
+    author: {
+      _id: "4",
+      name: "Sarah Brown",
+      picture: "sarah-brown.jpg",
+    },
+    upvotes: "30",
     views: 600,
-    answers: 6,
-    createdAt: "2024-04-10T09:00:00.000Z",
+    answers: [],
+    createdAt: new Date(
+      "2024-04-10T09:00:00.000Z"
+    ),
   },
   {
-    _id: 5,
+    _id: "5",
     title: "Understanding Blockchain Technology",
     tags: [
-      { _id: 10, name: "blockchain" },
-      { _id: 11, name: "cryptocurrency" },
+      { _id: "10", name: "blockchain" },
+      { _id: "11", name: "cryptocurrency" },
     ],
-    author: "Michael Clark",
-    upvotes: 20,
+    author: {
+      _id: "5",
+      name: "Michael Clark",
+      picture: "michael-clark.jpg",
+    },
+    upvotes: "20",
     views: 400,
-    answers: 4,
-    createdAt: "2024-05-20T14:15:00.000Z",
+    answers: [],
+    createdAt: new Date(
+      "2024-05-20T14:15:00.000Z"
+    ),
   },
 ];
 
@@ -113,9 +148,19 @@ export default function Home() {
       <div className=" mt-10 flex w-full flex-col gap-6  ">
         {/* {looping through Questions} */}
         {questions.length > 0 ? (
-          questions.map(
-            (question) => "QustionCard"
-          )
+          questions.map((question) => (
+            <QuestionCard
+              key={question._id}
+              _id={question._id}
+              title={question.title}
+              tags={question.tags}
+              author={question.author}
+              upvotes={question.upvotes}
+              views={question.views}
+              answers={question.answers}
+              createdAt={question.createdAt}
+            />
+          ))
         ) : (
           <NoResult
             title="Thers is no Questions to show 👀"
