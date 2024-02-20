@@ -25,10 +25,10 @@ const questions = [
       picture: "john-doe.jpg",
     },
     upvotes: "25",
-    views: 500,
+    views: 500000,
     answers: [],
     createdAt: new Date(
-      "2024-02-18T08:30:00.000Z"
+      "2020-02-18T08:30:00.000Z"
     ),
   },
   {
@@ -48,7 +48,7 @@ const questions = [
     views: 800,
     answers: [],
     createdAt: new Date(
-      "2024-01-15T15:45:00.000Z"
+      "2021-01-15T15:45:00.000Z"
     ),
   },
   {
@@ -65,10 +65,10 @@ const questions = [
       picture: "alex-johnson.jpg",
     },
     upvotes: "15",
-    views: 300,
+    views: 3000,
     answers: [],
     createdAt: new Date(
-      "2024-03-05T10:20:00.000Z"
+      "2021-03-05T10:20:00.000Z"
     ),
   },
   {
@@ -87,7 +87,7 @@ const questions = [
     views: 600,
     answers: [],
     createdAt: new Date(
-      "2024-04-10T09:00:00.000Z"
+      "2022-04-10T09:00:00.000Z"
     ),
   },
   {
@@ -106,7 +106,7 @@ const questions = [
     views: 400,
     answers: [],
     createdAt: new Date(
-      "2024-05-20T14:15:00.000Z"
+      "2023-05-20T14:15:00.000Z"
     ),
   },
 ];

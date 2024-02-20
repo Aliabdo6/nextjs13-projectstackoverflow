@@ -6,38 +6,42 @@ import RenderTag from "./RenderTag";
 // eslint-disable-next-line no-unused-vars
 const hotQuestions = [
   {
-    _id: 1,
+    _id: "1",
     titel: "What is the capital of France?",
   },
   {
-    _id: 2,
+    _id: "2",
     titel: "Who wrote 'To Kill a Mockingbird'?",
   },
   {
-    _id: 3,
+    _id: "3",
     titel:
       "What is the chemical symbol for water?",
   },
   {
-    _id: 4,
+    _id: "4",
     titel: "In which year did World War II end?",
   },
   {
-    _id: 5,
+    _id: "5",
     titel: "Who painted the Mona Lisa?",
   },
 ];
 
 const popularTag = [
-  { _id: 1, name: "Python", totalQuestions: 10 },
   {
-    _id: 2,
+    _id: "1",
+    name: "Python",
+    totalQuestions: 10,
+  },
+  {
+    _id: "2",
     name: "JavaScript",
     totalQuestions: 8,
   },
-  { _id: 3, name: "Java", totalQuestions: 12 },
-  { _id: 4, name: "C++", totalQuestions: 7 },
-  { _id: 5, name: "Ruby", totalQuestions: 6 },
+  { _id: "3", name: "Java", totalQuestions: 12 },
+  { _id: "4", name: "C++", totalQuestions: 7 },
+  { _id: "5", name: "Ruby", totalQuestions: 6 },
 ];
 
 const RightSidebar = () => {
