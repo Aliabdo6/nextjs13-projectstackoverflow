@@ -5,6 +5,7 @@ export const QuestionsSchema = z.object({
     .string()
     .min(100, "Description is too short"),
   tags: z
-    .array(z.string())
-    .min(1, "Please add at least one tag"),
+    .array(z.string().min(1).max(15))
+    .min(1)
+    .max(3),
 });
