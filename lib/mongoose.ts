@@ -11,7 +11,7 @@ export const connectToDatabase = async () => {
   }
   if (isConnected) {
     return console.log(
-      "using existing database connection"
+      " mongodb database connection"
     );
   }
 
