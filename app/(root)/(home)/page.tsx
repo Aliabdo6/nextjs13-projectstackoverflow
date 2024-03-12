@@ -5,6 +5,7 @@ import NoResult from "@/components/shared/NoResult";
 import LocalSearchBar from "@/components/shared/search/LocalSearchBar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
+// import { get } from "http";
 // import { Item } from "@radix-ui/react-menubar";
 import Link from "next/link";
 
@@ -111,7 +112,9 @@ const questions = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  // const result = await getQuestions();
+
   return (
     <>
       <div className=" flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center ">

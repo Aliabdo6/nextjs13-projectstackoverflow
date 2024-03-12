@@ -1,5 +1,5 @@
-import { Input } from '@/components/ui/input';
-import Image from 'next/image';
+import { Input } from "@/components/ui/input";
+import Image from "next/image";
 const GlobalSearch = () => {
   return (
     <div className="relative w-full max-w-[600px] max-lg:hidden">
@@ -14,7 +14,6 @@ const GlobalSearch = () => {
         <Input
           type="text"
           placeholder="Search globally"
-          value=""
           className="paragraph-regular no-focus placeholder background-light800_darkgradient border-none shadow-none outline-none"
         />
       </div>

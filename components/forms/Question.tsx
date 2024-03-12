@@ -21,13 +21,23 @@ import { QuestionsSchema } from "@/lib/validation";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { createQuestion } from "@/lib/actions/question.action";
+import {
+  useRouter,
+  usePathname,
+} from "next/navigation";
 
 const type: any = "create";
 
-const Question = () => {
+interface Props {
+  mongoUserId: string;
+}
+
+const Question = ({ mongoUserId }: Props) => {
   const editorRef = useRef(null);
   const [isSubmitting, setIsSubmitting] =
     useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   // 1. Define your form.
   const form = useForm<
@@ -49,9 +59,15 @@ const Question = () => {
     try {
       // make an async to the api > create question
       // contain all the form values
-      // navigate to the home page
 
-      await createQuestion({});
+      await createQuestion({
+        title: values.title,
+        content: values.description,
+        tags: values.tags,
+        author: JSON.parse(mongoUserId),
+      });
+      // navigate to the home page
+      router.push("/");
     } catch (error) {
       console.error(error);
     } finally {
