@@ -1,6 +1,8 @@
-import { BADGE_CRITERIA } from '@/constants';
+import { BADGE_CRITERIA } from "@/constants";
 
 export interface SidebarLink {
+  // eslint-disable-next-line no-undef
+  id: Key | null | undefined;
   imgURL: string;
   route: string;
   label: string;
@@ -31,12 +33,16 @@ export interface ParamsProps {
 }
 
 export interface SearchParamsProps {
-  searchParams: { [key: string]: string | undefined };
+  searchParams: {
+    [key: string]: string | undefined;
+  };
 }
 
 export interface URLProps {
   params: { id: string };
-  searchParams: { [key: string]: string | undefined };
+  searchParams: {
+    [key: string]: string | undefined;
+  };
 }
 
 export interface BadgeCounts {
@@ -45,4 +51,5 @@ export interface BadgeCounts {
   BRONZE: number;
 }
 
-export type BadgeCriteriaType = keyof typeof BADGE_CRITERIA;
+export type BadgeCriteriaType =
+  keyof typeof BADGE_CRITERIA;
