@@ -4,29 +4,29 @@ let isConnected: boolean = false;
 
 export const connectToDatabase = async () => {
   mongoose.set("strictQuery", true);
-  if (!process.env.MONGODB_URI) {
-    return console.log(
-      "MONGODB_URI is not defined"
-    );
+
+  if (!process.env.MONGODB_URL) {
+    return console.log("Missing MONGODB_URL");
   }
+
   if (isConnected) {
     return console.log(
-      " mongodb database connection"
+      "MongoDB is already connected"
     );
   }
 
   try {
     await mongoose.connect(
-      process.env.MONGODB_URI,
+      process.env.MONGODB_URL,
       {
         dbName: "devflow",
       }
     );
     isConnected = true;
-    console.log("Database connected");
+    console.log("MongoDB is connected");
   } catch (error) {
     console.log(
-      "Database connection error",
+      "MongoDB connection failed",
       error
     );
   }

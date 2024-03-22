@@ -1,5 +1,5 @@
-import { Input } from "@/components/ui/input";
-import Image from "next/image";
+import { Input } from '@/components/ui/input';
+import Image from 'next/image';
 const GlobalSearch = () => {
   return (
     <div className="relative w-full max-w-[600px] max-lg:hidden">
